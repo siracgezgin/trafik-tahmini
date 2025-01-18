@@ -28,7 +28,7 @@ Bu proje, trafik yoğunluğunu zamansal ve mekansal boyutlarda inceleyerek şehi
 
 ## 🎯 Projenin Amacı
 
-Bu proje, İstanbul'daki trafik dinamiklerini daha iyi anlamak ve tahmin etmek amacıyla geliştirilmiştir. Temel hedeflerimiz:
+Bu proje, İstanbul'daki trafik dinamiklerini daha iyi anlamak ve tahmin etmek amacıyla geliştirilmiştir. Temel hedeflerim:
 
 - Trafik yoğunluğunun zamansal değişimini modellemek
 - Çeşitli faktörlerin trafik üzerindeki etkisini analiz etmek
