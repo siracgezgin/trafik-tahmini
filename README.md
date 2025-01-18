@@ -44,7 +44,8 @@ Bu proje, İstanbul'daki trafik dinamiklerini daha iyi anlamak ve tahmin etmek a
 | Scikit-learn | 1.0+ | Makine öğrenmesi modelleri |
 | Pandas | 1.3+ | Veri manipülasyonu |
 | Matplotlib | 3.4+ | Veri görselleştirme |
-| Google Colab| Geliştirme ortamı |
+| Jupyter | 6.0+ | Geliştirme ortamı |
+| Google Colab| | |Ek Geliştirme ortamı |
 
 ## 🚀 Kurulum
 
