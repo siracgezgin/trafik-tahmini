@@ -45,7 +45,7 @@ Bu proje, İstanbul'daki trafik dinamiklerini daha iyi anlamak ve tahmin etmek a
 | Pandas | 1.3+ | Veri manipülasyonu |
 | Matplotlib | 3.4+ | Veri görselleştirme |
 | Jupyter | 6.0+ | Geliştirme ortamı |
-| Google Colab| | |Ek Geliştirme ortamı |
+| Google Colab |  | Ek Geliştirme ortamı |
 
 ## 🚀 Kurulum
 
