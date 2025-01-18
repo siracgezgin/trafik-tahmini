@@ -4,7 +4,11 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 
-İstanbul'un trafik yoğunluğunu tahmin etmek için geliştirilmiş makine öğrenmesi tabanlı bir analiz ve tahminleme projesi. Bu proje, gerçek zamanlı trafik verilerini kullanarak şehir içi trafik dinamiklerini modellemekte ve gelecekteki trafik durumları hakkında öngörüler sunmaktadır.
+Bu proje, 2024 yılı boyunca İstanbul’daki trafik dinamiklerini daha iyi anlamak ve geleceğe yönelik öngörüler sunmak üzere çeşitli veri kaynaklarından alınan zengin bir veri setini temel almaktadır.
+
+Proje veri seti, 2024 yılının aylarını ve günlerini kapsayacak şekilde şekillendirilmiştir. Trafik yoğunluğuna etki edebilecek hava durumu, özel günler, saat dilimleri, mevsimsel etkiler ve hafta sonu/hafta içi ayrımları gibi ek özellikler ile zenginleştirilmiştir. Veri setindeki eksik değerler ve aykırılar, gerçek dünya koşullarını taklit ederek veri işleme adımlarını test etmek için bilinçli olarak eklenmiştir.
+
+Bu proje, trafik yoğunluğunu zamansal ve mekansal boyutlarda inceleyerek şehir planlamacıları, sürücüler ve karar alıcılar için anlamlı öngörüler ve çözümler sunmayı amaçlamaktadır.
 
 ## 📋 İçerik Tablosu
 - [Projenin Amacı](#-projenin-amacı)
