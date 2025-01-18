@@ -1,6 +1,6 @@
 # 🚦 İstanbul Trafik Yoğunluğu Tahmin Projesi
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org)
+[![Python](https://img.shields.io/badge/Python-3.1%2B-blue.svg)](https://www.python.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 
