@@ -104,6 +104,7 @@ Detaylı veri seti dokümantasyonu için [DATASET.md](DATASET.md) dosyasını in
 
 ### Gerçek vs Tahmin Edilen Değerler
 ![Gerçek ve Tahmin Grafiği](images/gercek_vs_tahmin.png)
+
 *Modelin tahmin performansını gösteren karşılaştırma grafiği*
 
 ### Model Performans Karşılaştırması
