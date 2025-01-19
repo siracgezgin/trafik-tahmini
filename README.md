@@ -144,21 +144,51 @@ Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölç
 ## 📈 Görselleştirmeler
 
 ### Model Performans Grafikleri
-1. **Gerçek vs Tahmin Değerleri**
-   ![Gerçek ve Tahmin Grafiği](images/gercek_tahmin.png)
-   *Modelin tahmin performansını gösteren karşılaştırma grafiği*
 
-2. **Öğrenme Eğrileri**
-   ![Öğrenme Eğrileri](images/learning_curves.png)
-   *Modellerin eğitim sürecindeki performans gelişimi*
+1. **Eksik Değer Haritası**
+   ![Eksik Değer Haritası](images/eksik_deger_haritasi.png)
+   *Verisetindeki eksik değerlerin görselleştirilmesi*
 
-3. **Özellik Önem Dereceleri**
-   ![Özellik Önemleri](images/feature_importance.png)
+2. **Boxplot Öncesi Minimum Speed**
+   ![Boxplot Öncesi Minimum Speed](images/boxplot_oncesi_minimum_speed.png)
+   *Minimum hız verilerinin kutu grafiği (temizlemeden önce)*
+
+3. **Boxplot Sonrası Minimum Speed**
+   ![Boxplot Sonrası Minimum Speed](images/boxplot_sonrasi_minimum_speed.png)
+   *Minimum hız verilerinin kutu grafiği (temizlemeden sonra)*
+
+4. **Özellik Önem Dereceleri (Random Forest)**
+   ![Özellik Önem Dereceleri (Random Forest)](images/ozellik_onem_rf.png)
    *Random Forest modelinin özellik önem analizi*
 
-4. **Model Karşılaştırması**
-   ![Performans Karşılaştırması](images/performans.png)
-   *Farklı modellerin performans metriklerinin karşılaştırması*
+5. **Özellik Önem Dereceleri (SVR)**
+   ![Özellik Önem Dereceleri (SVR)](images/ozellik_onem_svr.png)
+   *SVR modelinin özellik önem analizi*
+
+6. **Özellik Önem Dereceleri (Gradient Boosting)**
+   ![Özellik Önem Dereceleri (Gradient Boosting)](images/ozellik_onem_gb.png)
+   *Gradient Boosting modelinin özellik önem analizi*
+
+7. **Model Karşılaştırması**
+   ![Model Karşılaştırması](images/model_karsilastirma.png)
+   *Farklı modellerin performans metriklerinin karşılaştırılması*
+
+8. **Öğrenme Eğrileri (Random Forest)**
+   ![Öğrenme Eğrileri (Random Forest)](images/learning_curves_rf.png)
+   *Random Forest modelinin öğrenme eğrileri*
+
+9. **Öğrenme Eğrileri (SVR)**
+   ![Öğrenme Eğrileri (SVR)](images/learning_curves_svr.png)
+   *SVR modelinin öğrenme eğrileri*
+
+10. **Öğrenme Eğrileri (Gradient Boosting)**
+    ![Öğrenme Eğrileri (Gradient Boosting)](images/learning_curves_gb.png)
+    *Gradient Boosting modelinin öğrenme eğrileri*
+
+11. **Tahmin Süreleri**
+    ![Tahmin Süreleri](images/tahmin_sureleri.png)
+    *Modellerin tahmin süreleri*
+
 
 ---
 
