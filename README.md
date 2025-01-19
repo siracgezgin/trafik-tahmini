@@ -153,9 +153,9 @@ Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölç
    ![Boxplot Öncesi Minimum Speed](images/boxplot_oncesi_minimum_speed.png)
    *Minimum hız verilerinin kutu grafiği (temizlemeden önce)*
 
-3. **Boxplot Sonrası Minimum Speed**
-   ![Boxplot Sonrası Minimum Speed](images/boxplot_sonrasi_minimum_speed.png)
-   *Minimum hız verilerinin kutu grafiği (temizlemeden sonra)*
+3. **Sayısal Değişkenlerin Kutu Grafiği**
+   ![Sayısal Değişkenlerin Kutu Grafiği](images/boxplot_sonrasi_minimum_speed.png)
+   *Sayısal Değişkenlerin Kutu Grafiği (temizlemeden sonra)*
 
 4. **Özellik Önem Dereceleri (Random Forest)**
    ![Özellik Önem Dereceleri (Random Forest)](images/ozellik_onem_rf1.png)
