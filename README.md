@@ -158,15 +158,15 @@ Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölç
    *Minimum hız verilerinin kutu grafiği (temizlemeden sonra)*
 
 4. **Özellik Önem Dereceleri (Random Forest)**
-   ![Özellik Önem Dereceleri (Random Forest)](images/ozellik_onem_rf.png)
+   ![Özellik Önem Dereceleri (Random Forest)](images/ozellik_onem_rf1.png)
    *Random Forest modelinin özellik önem analizi*
 
 5. **Özellik Önem Dereceleri (SVR)**
-   ![Özellik Önem Dereceleri (SVR)](images/ozellik_onem_svr.png)
+   ![Özellik Önem Dereceleri (SVR)](images/ozellik_onem_svr1.png)
    *SVR modelinin özellik önem analizi*
 
 6. **Özellik Önem Dereceleri (Gradient Boosting)**
-   ![Özellik Önem Dereceleri (Gradient Boosting)](images/ozellik_onem_gb.png)
+   ![Özellik Önem Dereceleri (Gradient Boosting)](images/ozellik_onem_gb1.png)
    *Gradient Boosting modelinin özellik önem analizi*
 
 7. **Model Karşılaştırması**
