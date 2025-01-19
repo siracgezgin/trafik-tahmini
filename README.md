@@ -189,6 +189,10 @@ Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölç
     ![Tahmin Süreleri](images/tahmin_sureleri.png)
     *Modellerin tahmin süreleri*
 
+12. **Ortalama Hız Dağılımı**
+    ![Ortalama Hız Dağılımı](images/ortalama_hiz.png)
+    *Modellerin ortalama hiz dağılımları*
+
 
 ---
 
