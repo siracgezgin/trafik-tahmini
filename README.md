@@ -249,7 +249,7 @@ Her modelin X_test üzerinden tahmin yapma süresi ölçülerek *bar chart* şek
 │   ├── learning_curves_rf.png
 │   ├── learning_curves_svr.png
 │   ├── learning_curves_gb.png
-│   └── tahmin_sureleri.png
+│   ├── tahmin_sureleri.png
 ├── sonuclar/
 │   ├── model_performance_results.csv
 │   ├── feature_importance_rf.csv
@@ -259,6 +259,7 @@ Her modelin X_test üzerinden tahmin yapma süresi ölçülerek *bar chart* şek
 ├── Trafik_Verileri.csv
 ├── README.md
 └── trafik_tahmini.ipynb (veya .py)
+
 
 
 ## Kurulum ve Çalıştırma Adımları
