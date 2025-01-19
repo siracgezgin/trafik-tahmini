@@ -241,7 +241,8 @@ Cross Val Score: 0.9201
 
 ### Model Karşılaştırma
 Tüm modellerin sonuçları `results_df` isimli bir DataFrame’de toplanmış ve görselleştirilmiştir.  
-Örnek bir karşılaştırma grafiği: `images/model_karsilastirma.png`  
+Örnek bir karşılaştırma grafiği: 
+![Model Karşılaştırma Grafiği](images/model_karsilastirma.png)  
 
 *Barplotlar* ile R2, MAE, RMSE ve cross validation sonuçları bir arada incelenmiştir.
 
@@ -249,15 +250,22 @@ Tüm modellerin sonuçları `results_df` isimli bir DataFrame’de toplanmış v
 - *Random Forest*: `feature_importances_` üzerinden önemli özellikler  
 - *SVR ve Gradient Boosting*: `permutation_importance` yaklaşımı kullanılarak en önemli değişkenler belirlenmiştir.  
 
-Görsel çıktı örneği: `images/ozellik_onem_rf.png`, `images/ozellik_onem_svr.png`, `images/ozellik_onem_gb.png`.
+Görsel çıktı örneği: 
+![Özellik Önem Dereceleri (Random Forest)](images/ozellik_onem_rf.png)
+![Özellik Önem Dereceleri (SVR)](images/ozellik_onem_svr.png)
+![Özellik Önem Dereceleri (Gradient Boosting)](images/ozellik_onem_gb.png)
 
 ### Learning Curves Analizi
 Özellikle *Random Forest*, **SVR** ve *Gradient Boosting* için `learning_curve` fonksiyonuyla eğitim-kıyas (cross-validation) skorlarının eğitim veri miktarına göre değişimi incelenmiştir.  
-Görsel çıktı: `images/learning_curves_rf.png`, `images/learning_curves_svr.png`, `images/learning_curves_gb.png`.
+Görsel çıktı: 
+![Öğrenme Eğrileri (Random Forest)](images/learning_curves_rf.png)
+![Öğrenme Eğrileri (SVR)](images/learning_curves_svr.png)
+![Öğrenme Eğrileri (Gradient Boosting)](images/learning_curves_gb.png)
 
 ### Model Tahmin Süreleri
 Her modelin `X_test` üzerinden tahmin yapma süresi ölçülerek *bar chart* şeklinde görselleştirilmiştir.  
-Örnek çıktı: `images/tahmin_sureleri.png`.
+Örnek çıktı: 
+![Tahmin Süreleri](images/tahmin_sureleri.png)
 
 ---
 
