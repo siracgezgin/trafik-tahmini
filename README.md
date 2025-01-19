@@ -237,7 +237,7 @@ Her modelin X_test üzerinden tahmin yapma süresi ölçülerek *bar chart* şek
 
 ## Klasör Yapısı ve Kayıtlı Dosyalar
 
-.
+
 ├── images/
 │   ├── eksik_deger_haritasi.png
 │   ├── boxplot_oncesi_minimum_speed.png
