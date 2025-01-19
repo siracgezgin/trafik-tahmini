@@ -329,24 +329,18 @@ Her modelin X_test üzerinden tahmin yapma süresi ölçülerek *bar chart* şek
 
 ---
 
-## Öneriler
-1. *Alternatif Rota Planlaması*: Trafik yoğun saatlerinde sürücülere farklı güzergâhlar önerilebilir.  
-2. *Hava Durumu Entegrasyonu*: Şiddetli yağış veya kar durumlarında hız limitlerini güncelleyip tahmin modellerine ek veri beslemesi yapılmalıdır.  
-3. *Dinamik Yol Kapasiteleri*: Araç sayısı ve hız ilişkisi dikkate alınarak kritik noktalardaki şerit sayısı veya alternatif yollar gözden geçirilmelidir.
-
----
-
 ## Katkıda Bulunma
-1. Bu projeyi *fork* edin.
-2. Yeni bir *branch* oluşturun:  
-   bash
+
+1. Bu projeyi **fork** edin.
+2. Yeni bir **branch** oluşturun:
+   ```bash
    git checkout -b feature/yeni-ozellik
-   
-3. Değişikliklerinizi *commit* edin:  
-   bash
+   ```
+3. Değişikliklerinizi **commit** edin:
+   ```bash
    git commit -m "Yeni özellik eklendi"
-   
-4. *Push* edin ve bir *Pull Request* oluşturun.  
+   ```
+4. **Push** edin ve bir **Pull Request** oluşturun.
 
 Her türlü katkı ve geri bildirim değerlidir; projeyi geliştirmek ve iyileştirmek için katkılarınızı bekliyorum.
 
