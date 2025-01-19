@@ -261,38 +261,34 @@ Her modelin X_test üzerinden tahmin yapma süresi ölçülerek *bar chart* şek
 └── trafik_tahmini.ipynb (veya .py)
 
 
-- *images/*: Proje boyunca üretilen tüm grafik ve görselleri içerir.  
-- *sonuclar/*:  
-  - model_performance_results.csv: Tüm modellerin performans metrikleri  
-  - feature_importance_.csv*: Farklı modellerin özellik önemleri  
-  - best_model.joblib: En iyi modelin kaydedilmiş hali  
+## Kurulum ve Çalıştırma Adımları
 
----
-
-## Kullanım
-
-1. *Proje deposunu klonlayın*:
-   bash
+1. **Proje deposunu klonlayın**:
+   ```bash
    git clone https://github.com/siracgezgin/trafik-tahmini.git
    cd trafik-tahmini
-   
-2. *Sanal ortam oluşturun ve aktif hale getirin* (opsiyonel, önerilir):
-   bash
+   ```
+
+2. **Sanal ortam oluşturun ve aktif hale getirin** (opsiyonel, önerilir):
+   ```bash
    python -m venv venv
    source venv/bin/activate  # Linux/Mac
    venv\Scripts\activate     # Windows
-   
-3. *Gerekli paketleri yükleyin*:
-   bash
+   ```
+
+3. **Gerekli paketleri yükleyin**:
+   ```bash
    pip install -r requirements.txt
-   
-4. *Proje dosyasını (Jupyter Notebook/.py) çalıştırın*:
-   bash
+   ```
+
+4. **Proje dosyasını (Jupyter Notebook/.py) çalıştırın**:
+   ```bash
    jupyter notebook
-   
+   ```
    veya
-   bash
+   ```bash
    python trafik_tahmini.py
+   ```
    
 5. *Analiz ve modelleme adımlarını* sırasıyla çalıştırın. Tüm *grafikler* images klasöründe, *sonuçlar* da sonuclar klasöründe otomatik olarak saklanacaktır.
 
