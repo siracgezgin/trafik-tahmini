@@ -187,16 +187,166 @@ Veri seti içerisinde, *eksik değerler* ve *aykırı değerler* gerçek dünya 
 - *Kategorik Sütunlar*: WEATHER, SEASON, IS_HOLIDAY, IS_PEAK_HOUR, IS_WEEKEND vb.  
 - *One-Hot Encoding* uygulaması ile kategorik değişkenlerin model için uygun hale getirilmesi.
 
+---
+
 ### Kod Detayları
-Projede kullanılan temel kütüphanelerin import edilmesiyle başlar:
-python
+
+Projede kullanılan kodlar, her bir veri hazırlama ve modelleme adımını doğru, anlaşılır ve tekrardan çalıştırılabilir bir şekilde gerçekleştirecek biçimde yazılmıştır. Aşağıda, kodun temel akışı belirtilmiştir:
+
+#### Kütüphanelerin Import Edilmesi
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-# ...
+from sklearn.preprocessing import StandardScaler, LabelEncoder, RobustScaler
+from sklearn.model_selection import train_test_split, cross_val_score, learning_curve, GridSearchCV
+from sklearn.metrics import (
+    mean_absolute_error, mean_squared_error, r2_score,
+    explained_variance_score, max_error, mean_absolute_percentage_error
+)
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.linear_model import LinearRegression, Lasso, Ridge
+from sklearn.svm import SVR
+import warnings
+import joblib
+import time
+from sklearn.inspection import permutation_importance
 
-Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölçeklendirme ve model eğitimi gibi adımlar sırasıyla *ayrıntılı* biçimde yapılmıştır. Kodun tamamı için lütfen [proje not defterini veya .py dosyasını](./) inceleyiniz.
+# Uyarıları kapatma
+warnings.filterwarnings('ignore')
+```
+
+#### Verilerin Yüklenmesi ve İlk Keşif
+```python
+file_path = "Trafik_Verileri.csv"  # Trafik verisi dosyasının yolu
+df = pd.read_csv(file_path)
+
+print("Veri Seti Boyutu:", df.shape)
+print("Sütunlar ve Türleri:")
+print(df.info())
+print("\nİlk 5 Satır:")
+print(df.head())
+```
+
+#### Eksik Değerlerin Analizi ve Doldurulması
+```python
+# Eksik değerlerin analiz edilmesi
+print("Eksik Değer Sayıları:")
+print(df.isnull().sum())
+
+# Eksik değer haritasının görselleştirilmesi
+plt.figure(figsize=(12, 6))
+sns.heatmap(df.isnull(), yticklabels=False, cbar=True, cmap='viridis')
+plt.title("Eksik Değer Haritası")
+plt.show()
+
+# Sayısal sütunlar için ortalama, kategorik sütunlar için mod ile doldurma
+numeric_columns = df.select_dtypes(include=['float64', 'int64']).columns
+categorical_columns = df.select_dtypes(include=['object']).columns
+
+df[numeric_columns] = df[numeric_columns].fillna(df[numeric_columns].mean())
+for col in categorical_columns:
+    df[col] = df[col].fillna(df[col].mode()[0])
+
+print("\nEksik değerler doldurulduktan sonra:")
+print(df.isnull().sum())
+```
+
+#### Zaman Bazlı Özelliklerin Eklenmesi
+```python
+df['DATE_TIME'] = pd.to_datetime(df['DATE_TIME'], errors='coerce')
+df['HOUR'] = df['DATE_TIME'].dt.hour
+df['DAY'] = df['DATE_TIME'].dt.day
+df['MONTH'] = df['DATE_TIME'].dt.month
+df['YEAR'] = df['DATE_TIME'].dt.year
+df['WEEKDAY'] = df['DATE_TIME'].dt.weekday
+df['IS_WEEKEND'] = df['WEEKDAY'].apply(lambda x: 1 if x >= 5 else 0)
+
+print("\nTarih ve Zaman Bazlı Özellikler:")
+print(df[['DATE_TIME', 'HOUR', 'DAY', 'MONTH', 'YEAR', 'WEEKDAY', 'IS_WEEKEND']].head())
+```
+
+#### Aykırı Değerlerin Tespiti ve Düzeltilmesi
+```python
+def handle_outliers(data, column):
+    Q1 = data[column].quantile(0.25)
+    Q3 = data[column].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    data[column] = np.where(data[column] < lower_bound, lower_bound, data[column])
+    data[column] = np.where(data[column] > upper_bound, upper_bound, data[column])
+
+# Aykırı değerlerin düzeltilmesi
+numeric_columns = df.select_dtypes(include=['float64', 'int64']).columns
+for col in numeric_columns:
+    handle_outliers(df, col)
+```
+
+#### Verilerin Standardizasyonu
+```python
+scaler = StandardScaler()
+scaled_columns = ['LATITUDE', 'LONGITUDE', 'MINIMUM_SPEED', 'MAXIMUM_SPEED', 'AVERAGE_SPEED', 'NUMBER_OF_VEHICLES']
+df[scaled_columns] = scaler.fit_transform(df[scaled_columns])
+
+print("\nStandardize edilmiş veri:")
+print(df[scaled_columns].head())
+```
+
+#### Eğitim ve Test Setlerinin Ayrılması
+```python
+X = df.drop(columns=['AVERAGE_SPEED', 'DATE_TIME', 'GEOHASH'])
+y = df['AVERAGE_SPEED']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+print("\nEğitim ve Test Setleri:")
+print("X_train boyutu:", X_train.shape)
+print("X_test boyutu:", X_test.shape)
+```
+
+#### Modellerin Eğitimi ve Değerlendirilmesi
+```python
+# Model parametreleri
+rf_params = {'n_estimators': [100, 200], 'max_depth': [10, 20]}
+gb_params = {'n_estimators': [100, 200], 'learning_rate': [0.01, 0.1]}
+svr_params = {'kernel': ['linear', 'rbf'], 'C': [0.1, 1]}
+
+# Modellerin tanımlanması
+models = {
+    'Random Forest': RandomizedSearchCV(RandomForestRegressor(random_state=42), rf_params, n_iter=10, cv=3),
+    'Gradient Boosting': RandomizedSearchCV(GradientBoostingRegressor(random_state=42), gb_params, n_iter=10, cv=3),
+    'SVR': RandomizedSearchCV(SVR(), svr_params, n_iter=10, cv=3)
+}
+
+# Eğitim ve değerlendirme
+results = {}
+for name, model in models.items():
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    results[name] = {
+        'R2': r2_score(y_test, y_pred),
+        'MAE': mean_absolute_error(y_test, y_pred),
+        'RMSE': np.sqrt(mean_squared_error(y_test, y_pred))
+    }
+
+print("\nModel Performans Sonuçları:")
+print(results)
+```
+
+#### Model Karşılaştırması ve Kaydedilmesi
+```python
+results_df = pd.DataFrame(results).T
+results_df.to_csv('model_performance_results.csv', index=False)
+
+best_model_name = results_df['R2'].idxmax()
+joblib.dump(models[best_model_name], 'best_model.joblib')
+
+print(f"En iyi model {best_model_name} kaydedildi.")
+```
+
+Yukarıdaki kodlarda, her bir işlem açıklamalı şekilde verilmiştir. Detaylı sonuçlar ve görselleştirmeler için [trafik_tahmini.ipynb](./trafik_tahmini.ipynb) dosyasını inceleyebilirsiniz. 
+
 
 ---
 
