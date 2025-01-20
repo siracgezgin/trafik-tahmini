@@ -87,36 +87,65 @@ Veri seti içerisinde, *eksik değerler* ve *aykırı değerler* gerçek dünya 
 | *time*     | -       | Model tahmin sürelerinin ölçülmesi       |
 
 ---
-# 🚀 Kurulum
 
-1. Repository'yi klonlayın:
-```bash
-git clone https://github.com/siracgezgin/trafik-tahmini.git
-cd trafik-tahmini
-```
+## Klasör Yapısı ve Kayıtlı Dosyalar
 
-2. Sanal ortam oluşturun ve aktifleştirin:
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac için
-venv\Scripts\activate  # Windows için
-```
+.
+├── images/
+│   ├── eksik_deger_haritasi.png
+│   ├── boxplot_oncesi_minimum_speed.png
+│   ├── boxplot_sonrasi_minimum_speed.png
+│   ├── ozellik_onem_rf.png
+│   ├── ozellik_onem_svr.png
+│   ├── ozellik_onem_gb.png
+│   ├── model_karsilastirma.png
+│   ├── learning_curves_rf.png
+│   ├── learning_curves_svr.png
+│   ├── learning_curves_gb.png
+│   ├── tahmin_sureleri.png
+├── sonuclar/
+│   ├── model_performance_results.csv
+│   ├── feature_importance_rf.csv
+│   ├── feature_importance_svr.csv
+│   ├── feature_importance_gb.csv
+│   └── best_model.joblib
+├── Trafik_Verileri.csv
+├── README.md
+└── trafik_tahmini.ipynb (veya .py)
 
-3. Gerekli kütüphaneleri yükleyin:
-```bash
-pip install -r requirements.txt
-```
 
-## 💻 Kullanım
 
-1. Jupyter Notebook'u başlatın:
-```bash
-jupyter notebook
-```
+## Kurulum ve Çalıştırma Adımları
 
-2. `trafik_tahmini.ipynb` dosyasını açın
-3. Tüm hücreleri sırayla çalıştırın
+1. **Proje deposunu klonlayın**:
+   ```bash
+   git clone https://github.com/siracgezgin/trafik-tahmini.git
+   cd trafik-tahmini
+   ```
+
+2. **Sanal ortam oluşturun ve aktif hale getirin** (opsiyonel, önerilir):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   venv\Scripts\activate     # Windows
+   ```
+
+3. **Gerekli paketleri yükleyin**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Proje dosyasını (Jupyter Notebook/.py) çalıştırın**:
+   ```bash
+   jupyter notebook
+   ```
+   veya
+   ```bash
+   python trafik_tahmini.py
+   ```
    
+5. *Analiz ve modelleme adımlarını* sırasıyla çalıştırın. Tüm *grafikler* images klasöründe, *sonuçlar* da sonuclar klasöründe otomatik olarak saklanacaktır.
+
 ---
 
 ## Proje Yapısı
@@ -252,28 +281,6 @@ Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölç
 6. *Lasso Regression*
    
 
-
-## 📊 Model Performansı
-
-### Temel Metrikler
-
-| Model | R² Score | MAE | RMSE | Eğitim Süresi (sn) | CV Score |
-|-------|----------|-----|------|-------------------|-----------|
-| Linear Regression | 0.91 | 0.22 | 0.29 | 2.3 | 0.89 |
-| Random Forest | 0.92 | 0.19 | 0.27 | 15.7 | 0.91 |
-| Gradient Boosting | 0.93 | 0.19 | 0.26 | 23.4 | 0.92 |
-| SVR | 0.92 | 0.19 | 0.26 | 18.2 | 0.90 |
-
-### Sınıflandırma Metrikleri
-
-| Model | Doğruluk | Kesinlik | Duyarlılık | F1 Skoru |
-|-------|----------|----------|-------------|-----------|
-| Linear Regression | 0.87 | 0.86 | 0.85 | 0.85 |
-| Random Forest | 0.89 | 0.88 | 0.87 | 0.87 |
-| Gradient Boosting | 0.90 | 0.89 | 0.88 | 0.88 |
-| SVR | 0.88 | 0.87 | 0.86 | 0.86 |
-
-
 ### Hiperparametre Optimizasyonu
 Bazı modellerde (*Random Forest, **Gradient Boosting, **SVR) **RandomizedSearchCV* ve/veya *GridSearchCV* yöntemleri kullanılmıştır.  
 Örnek parametre aralıkları:
@@ -331,73 +338,28 @@ Her modelin `X_test` üzerinden tahmin yapma süresi ölçülerek *bar chart* ş
 
 ---
 
-## Sonuçlar ve Özet Rapor
-1. *En İyi Model: R2 skoru en yüksek çıkan model genellikle **Gradient Boosting* veya *Random Forest* (kod çıktılarına göre değişebilir).
-2. *Önemli Özellikler*: Zaman bazlı değişkenler (saat, gün, hafta sonu), hava durumu, araç sayısı vb. öne çıkmıştır.
-3. *Genel Performans*: R2 skorları 0.90+ seviyelerinde, MAE ve RMSE oldukça düşük.  
-4. *Kullanıcı Kazanımı*: Model sonuçları, İstanbul’da belirli saatlerde yoğunluğun nasıl değiştiği ve hangi faktörlerin en çok etkilediği hakkında öngörüler sunar.  
+## 📊 Model Performansı
+
+### Temel Metrikler
+
+| Model | R² Score | MAE | RMSE | Eğitim Süresi (sn) | CV Score |
+|-------|----------|-----|------|-------------------|-----------|
+| Linear Regression | 0.91 | 0.22 | 0.29 | 2.3 | 0.89 |
+| Random Forest | 0.92 | 0.19 | 0.27 | 15.7 | 0.91 |
+| Gradient Boosting | 0.93 | 0.19 | 0.26 | 23.4 | 0.92 |
+| SVR | 0.92 | 0.19 | 0.26 | 18.2 | 0.90 |
+
+### Sınıflandırma Metrikleri
+
+| Model | Doğruluk | Kesinlik | Duyarlılık | F1 Skoru |
+|-------|----------|----------|-------------|-----------|
+| Linear Regression | 0.87 | 0.86 | 0.85 | 0.85 |
+| Random Forest | 0.89 | 0.88 | 0.87 | 0.87 |
+| Gradient Boosting | 0.90 | 0.89 | 0.88 | 0.88 |
+| SVR | 0.88 | 0.87 | 0.86 | 0.86 |
 
 ---
 
-## Klasör Yapısı ve Kayıtlı Dosyalar
-
-.
-├── images/
-│   ├── eksik_deger_haritasi.png
-│   ├── boxplot_oncesi_minimum_speed.png
-│   ├── boxplot_sonrasi_minimum_speed.png
-│   ├── ozellik_onem_rf.png
-│   ├── ozellik_onem_svr.png
-│   ├── ozellik_onem_gb.png
-│   ├── model_karsilastirma.png
-│   ├── learning_curves_rf.png
-│   ├── learning_curves_svr.png
-│   ├── learning_curves_gb.png
-│   ├── tahmin_sureleri.png
-├── sonuclar/
-│   ├── model_performance_results.csv
-│   ├── feature_importance_rf.csv
-│   ├── feature_importance_svr.csv
-│   ├── feature_importance_gb.csv
-│   └── best_model.joblib
-├── Trafik_Verileri.csv
-├── README.md
-└── trafik_tahmini.ipynb (veya .py)
-
-
-
-## Kurulum ve Çalıştırma Adımları
-
-1. **Proje deposunu klonlayın**:
-   ```bash
-   git clone https://github.com/siracgezgin/trafik-tahmini.git
-   cd trafik-tahmini
-   ```
-
-2. **Sanal ortam oluşturun ve aktif hale getirin** (opsiyonel, önerilir):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Linux/Mac
-   venv\Scripts\activate     # Windows
-   ```
-
-3. **Gerekli paketleri yükleyin**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Proje dosyasını (Jupyter Notebook/.py) çalıştırın**:
-   ```bash
-   jupyter notebook
-   ```
-   veya
-   ```bash
-   python trafik_tahmini.py
-   ```
-   
-5. *Analiz ve modelleme adımlarını* sırasıyla çalıştırın. Tüm *grafikler* images klasöründe, *sonuçlar* da sonuclar klasöründe otomatik olarak saklanacaktır.
-
----
 
 ## Katkıda Bulunma
 
