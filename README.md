@@ -91,7 +91,7 @@ Veri seti içerisinde, *eksik değerler* ve *aykırı değerler* gerçek dünya 
 ## Klasör Yapısı ve Kayıtlı Dosyalar
 
 .
-├── **images/**
+├── images/
 │   ├── eksik_deger_haritasi.png
 │   ├── boxplot_oncesi_minimum_speed.png
 │   ├── boxplot_sonrasi_minimum_speed.png
@@ -103,7 +103,7 @@ Veri seti içerisinde, *eksik değerler* ve *aykırı değerler* gerçek dünya 
 │   ├── learning_curves_svr.png
 │   ├── learning_curves_gb.png
 │   ├── tahmin_sureleri.png
-├── **sonuclar/**
+├── sonuclar/
 │   ├── model_performance_results.csv
 │   ├── feature_importance_rf.csv
 │   ├── feature_importance_svr.csv
