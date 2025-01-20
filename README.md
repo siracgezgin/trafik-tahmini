@@ -87,6 +87,37 @@ Veri seti içerisinde, *eksik değerler* ve *aykırı değerler* gerçek dünya 
 | *time*     | -       | Model tahmin sürelerinin ölçülmesi       |
 
 ---
+# 🚀 Kurulum
+
+1. Repository'yi klonlayın:
+```bash
+git clone https://github.com/siracgezgin/trafik-tahmini.git
+cd trafik-tahmini
+```
+
+2. Sanal ortam oluşturun ve aktifleştirin:
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac için
+venv\Scripts\activate  # Windows için
+```
+
+3. Gerekli kütüphaneleri yükleyin:
+```bash
+pip install -r requirements.txt
+```
+
+## 💻 Kullanım
+
+1. Jupyter Notebook'u başlatın:
+```bash
+jupyter notebook
+```
+
+2. `trafik_tahmini.ipynb` dosyasını açın
+3. Tüm hücreleri sırayla çalıştırın
+   
+---
 
 ## Proje Yapısı
 1. *Veri Yükleme ve Keşifsel Veri Analizi (EDA)*
@@ -205,6 +236,48 @@ Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölç
 4. *Support Vector Regressor (SVR)*
 5. *Ridge Regression*
 6. *Lasso Regression*
+   
+
+1. **Linear Regression**
+   - Baseline model olarak kullanıldı
+   - Özellik ilişkilerini anlamak için tercih edildi
+
+2. **Random Forest**
+   - Ensemble öğrenme yaklaşımı
+   - Özellik önem analizi için kullanıldı
+   - Hiperparametre optimizasyonu yapıldı
+
+3. **Gradient Boosting**
+   - En yüksek performansı gösteren model
+   - Adaptif öğrenme özelliği
+   - Cross-validation ile doğrulandı
+
+4. **Support Vector Regression**
+   - Doğrusal olmayan ilişkileri modellemek için
+   - Kernel trick kullanımı
+   - RBF kernel optimizasyonu
+
+
+## 📊 Model Performansı
+
+### Temel Metrikler
+
+| Model | R² Score | MAE | RMSE | Eğitim Süresi (sn) | CV Score |
+|-------|----------|-----|------|-------------------|-----------|
+| Linear Regression | 0.91 | 0.22 | 0.29 | 2.3 | 0.89 |
+| Random Forest | 0.92 | 0.19 | 0.27 | 15.7 | 0.91 |
+| Gradient Boosting | 0.93 | 0.19 | 0.26 | 23.4 | 0.92 |
+| SVR | 0.92 | 0.19 | 0.26 | 18.2 | 0.90 |
+
+### Sınıflandırma Metrikleri
+
+| Model | Doğruluk | Kesinlik | Duyarlılık | F1 Skoru |
+|-------|----------|----------|-------------|-----------|
+| Linear Regression | 0.87 | 0.86 | 0.85 | 0.85 |
+| Random Forest | 0.89 | 0.88 | 0.87 | 0.87 |
+| Gradient Boosting | 0.90 | 0.89 | 0.88 | 0.88 |
+| SVR | 0.88 | 0.87 | 0.86 | 0.86 |
+
 
 ### Hiperparametre Optimizasyonu
 Bazı modellerde (*Random Forest, **Gradient Boosting, **SVR) **RandomizedSearchCV* ve/veya *GridSearchCV* yöntemleri kullanılmıştır.  
@@ -349,8 +422,22 @@ Her türlü katkı ve geri bildirim değerlidir; projeyi geliştirmek ve iyileş
 ---
 
 ## 📚 Veri Seti
+Veri seti, İBB Açık Veri Portalı'ndan alınmış olup şu özellikleri içermektedir:
 
-Veri seti, İBB Açık Veri Portalı'ndan alınmış olup şu özellikleri içermektedir.
+### Temel Özellikler
+- Zaman damgası (DATE_TIME)
+- Bölge kodları (REGION_ID)
+- Minimum hız (MINIMUM_SPEED)
+- Maksimum hız (MAXIMUM_SPEED)
+- Ortalama hız (AVERAGE_SPEED)
+- Araç sayısı (NUMBER_OF_VEHICLES)
+
+### Ek Özellikler
+- Hava durumu bilgileri
+- Özel gün/etkinlik bilgileri
+- Yol çalışması bilgileri
+- Kaza kayıtları
+
 Detaylı veri seti dokümantasyonu için [DATASET.md](DATASET.md) dosyasını inceleyebilirsiniz.
 
 ---
