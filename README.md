@@ -281,17 +281,20 @@ Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölç
 6. *Lasso Regression*
    
 
-### Hiperparametre Optimizasyonu
-Bazı modellerde (*Random Forest, **Gradient Boosting, **SVR) **RandomizedSearchCV* ve/veya *GridSearchCV* yöntemleri kullanılmıştır.  
-Örnek parametre aralıkları:
-python
+## Hiperparametre Optimizasyonu
+
+Bazı modellerde (*Random Forest*, **Gradient Boosting**, **SVR**), **RandomizedSearchCV** ve/veya **GridSearchCV** yöntemleri kullanılmıştır.  
+Örnek parametre aralıkları:  
+
+```python
 rf_params = {
     'n_estimators': [100, 200, 300, 400],
     'max_depth': [10, 20, 30, None],
     'min_samples_split': [2, 5, 10],
     'min_samples_leaf': [1, 2, 4],
     'bootstrap': [True, False]
-}
+} 
+```
 
 Bu sayede, modelin *en iyi ayarları* (best_params_) ve *en yüksek cross-validation skoru* (best_score_) elde edilmiştir.
 
