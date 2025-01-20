@@ -399,10 +399,14 @@ Detaylı veri seti dokümantasyonu için [DATASET.md](DATASET.md) dosyasını in
 
 ---
 
+### Video Tanıtımı
+Projemin detaylarını ve nasıl çalıştığını öğrenmek için aşağıdaki videoyu izleyebilirsiniz:
+[YouTube Video Linki](https://youtu.be/09NmiLQzlPI)
+
 ## İletişim
 - Siraç Gezgin - [LinkedIn](https://linkedin.com/in/siracgezgin) - siracgezgin@gmail.com
 - Proje Linki: [https://github.com/siracgezgin/trafik-tahmini](https://github.com/siracgezgin/trafik-tahmini)
-
+  
 ---
 
 ## Lisans
