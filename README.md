@@ -230,14 +230,6 @@ Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölç
 ## Model Geliştirme ve Değerlendirme
 
 ### Kullanılan Algoritmalar
-1. *Linear Regression (Doğrusal Regresyon)*
-2. *Random Forest Regressor*
-3. *Gradient Boosting Regressor*
-4. *Support Vector Regressor (SVR)*
-5. *Ridge Regression*
-6. *Lasso Regression*
-   
-
 1. **Linear Regression**
    - Baseline model olarak kullanıldı
    - Özellik ilişkilerini anlamak için tercih edildi
@@ -256,6 +248,9 @@ Ardından veri yükleme, eksik değer doldurma, aykırı değer temizleme, ölç
    - Doğrusal olmayan ilişkileri modellemek için
    - Kernel trick kullanımı
    - RBF kernel optimizasyonu
+5. *Ridge Regression*
+6. *Lasso Regression*
+   
 
 
 ## 📊 Model Performansı
