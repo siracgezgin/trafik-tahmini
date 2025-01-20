@@ -88,30 +88,30 @@ Veri seti içerisinde, *eksik değerler* ve *aykırı değerler* gerçek dünya 
 
 ---
 
-## Klasör Yapısı ve Kayıtlı Dosyalar
-
-.
-├── images/
-│   ├── eksik_deger_haritasi.png
-│   ├── boxplot_oncesi_minimum_speed.png
-│   ├── boxplot_sonrasi_minimum_speed.png
-│   ├── ozellik_onem_rf.png
-│   ├── ozellik_onem_svr.png
-│   ├── ozellik_onem_gb.png
-│   ├── model_karsilastirma.png
-│   ├── learning_curves_rf.png
-│   ├── learning_curves_svr.png
-│   ├── learning_curves_gb.png
-│   ├── tahmin_sureleri.png
-├── sonuclar/
-│   ├── model_performance_results.csv
-│   ├── feature_importance_rf.csv
-│   ├── feature_importance_svr.csv
-│   ├── feature_importance_gb.csv
-│   └── best_model.joblib
-├── Trafik_Verileri.csv
-├── README.md
-└── trafik_tahmini.ipynb (veya .py)
+## Klasör Yapısı ve Kayıtlı Dosyalar<br>
+<br>
+.<br>
+├── images/<br>
+│   ├── eksik_deger_haritasi.png<br>
+│   ├── boxplot_oncesi_minimum_speed.png<br>
+│   ├── boxplot_sonrasi_minimum_speed.png<br>
+│   ├── ozellik_onem_rf.png<br>
+│   ├── ozellik_onem_svr.png<br>
+│   ├── ozellik_onem_gb.png<br>
+│   ├── model_karsilastirma.png<br>
+│   ├── learning_curves_rf.png<br>
+│   ├── learning_curves_svr.png<br>
+│   ├── learning_curves_gb.png<br>
+│   ├── tahmin_sureleri.png<br>
+├── sonuclar/<br>
+│   ├── model_performance_results.csv<br>
+│   ├── feature_importance_rf.csv<br>
+│   ├── feature_importance_svr.csv<br>
+│   ├── feature_importance_gb.csv<br>
+│   └── best_model.joblib<br>
+├── Trafik_Verileri.csv<br>
+├── README.md<br>
+└── trafik_tahmini.ipynb (veya .py)<br>
 
 
 
