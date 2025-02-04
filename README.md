@@ -89,7 +89,6 @@ Veri seti içerisinde, *eksik değerler* ve *aykırı değerler* gerçek dünya 
 ---
 
 ## Klasör Yapısı ve Kayıtlı Dosyalar<br>
-.<br>
 ├── images/<br>
 │   ├── eksik_deger_haritasi.png<br>
 │   ├── boxplot_oncesi_minimum_speed.png<br>
