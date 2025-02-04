@@ -6,7 +6,7 @@
 
 Bu proje, İstanbul’daki trafik verilerini kullanarak *trafik yoğunluğunu tahmin etmeyi* ve *trafik dinamiklerini* daha iyi anlayarak gelecekteki trafik durumuna dair öngörüler sunmayı amaçlamaktadır. Proje boyunca, eksik değer analizi, aykırı değer yönetimi, veri ön işleme, özellik mühendisliği, çoklu makine öğrenmesi algoritmalarıyla modelleme, hiperparametre optimizasyonu ve sonuçların görselleştirilmesi gibi kapsamlı adımlar uygulanmıştır.
 
-## 📋 İçindekiler
+## İçindekiler
 - [Projenin Amacı](#projenin-amacı)
 - [Veri Seti ve Özellikler](#veri-seti-ve-özellikler)
 - [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
@@ -58,7 +58,7 @@ Bu proje, İstanbul’daki trafik verilerini kullanarak *trafik yoğunluğunu ta
 
 Veri seti içerisinde, *eksik değerler* ve *aykırı değerler* gerçek dünya örneklerine benzer şekilde bulunmakta ve projede bu değerlerle ilgili kapsamlı *veri temizleme ve ön işleme* adımları uygulanmaktadır.
 
-## ✨ Özellikler
+## Özellikler
 
 - Gerçek zamanlı trafik verisi analizi
 - Çoklu makine öğrenmesi algoritmaları ile tahminleme
@@ -530,7 +530,7 @@ Her türlü katkı ve geri bildirim değerlidir; projeyi geliştirmek ve iyileş
 
 ---
 
-## 📚 Veri Seti
+## Veri Seti
 Veri seti, İBB Açık Veri Portalı'ndan alınmış olup şu özellikleri içermektedir:
 
 ### Temel Özellikler
