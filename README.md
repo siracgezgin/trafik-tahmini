@@ -489,7 +489,7 @@ Her modelin `X_test` üzerinden tahmin yapma süresi ölçülerek *bar chart* ş
 
 ---
 
-## 📊 Model Performansı
+## Model Performansı
 
 ### Temel Metrikler
 
